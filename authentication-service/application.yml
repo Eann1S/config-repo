@@ -49,6 +49,5 @@ secret:
 
 kafka:
   topics:
-    authentication-service:
-      consumer: authentication-service-consumer-topic
-      producer: authentication-service-producer-topic
+    registration-topic: registration-topic
+    user-update-topic: user-update-topic
