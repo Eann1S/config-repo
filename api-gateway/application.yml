@@ -10,12 +10,12 @@ spring:
         - id: authentication-service
           uri: lb://authentication-service
           predicates:
-            - Path=/api/v1/authentication/**
+            - Path=/api/v1/register/**,/api/v1/login/**
 
         - id: authentication-service-secured
           uri: lb://authentication-service
           predicates:
-            - Path=/api/v1/activation/**,/api/v1/logout
+            - Path=/api/v1/confirmation/**,/api/v1/logout
           filters:
             - Authentication
 eureka:
