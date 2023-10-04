@@ -18,6 +18,13 @@ spring:
             - Path=/api/v1/confirmation/**,/api/v1/logout
           filters:
             - Authentication
+            
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/users/**,/api/v1/user/**
+          filters:
+            - Authentication
 eureka:
   client:
     service-url:

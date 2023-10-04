@@ -5,10 +5,7 @@ spring:
   application:
     name: user-service
   neo4j:
-    uri: ${DATABASE_URL}
-    authentication:
-      username: ${DATABASE_USERNAME}
-      password: ${DATABASE_PASSWORD}
+    uri: ${DATABASE_URL:bolt://localhost:7687}
   kafka:
     bootstrap-servers: ${KAFKA_URL:localhost:9092}
     producer:

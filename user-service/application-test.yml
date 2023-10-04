@@ -1,9 +1,0 @@
-spring:
-  kafka:
-    consumer:
-      group-id: test-group-id
-      auto-offset-reset: earliest
-
-eureka:
-  client:
-    enabled: false
