@@ -5,7 +5,7 @@ spring:
   application:
     name: user-service
   neo4j:
-    uri: ${DATABASE_URL:bolt://localhost:7687}
+    uri: bolt://${DATABASE_URL:localhost:7687}
   kafka:
     bootstrap-servers: ${KAFKA_URL:localhost:9092}
     producer:

@@ -1,0 +1,15 @@
+spring:
+  cassandra:
+    contact-points: ${DATABASE_HOST:127.0.0.1}
+    port: ${DATABASE_PORT:9042}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    keyspace-name: messages
+    local-datacenter: datacenter1
+    schema-action: CREATE_IF_NOT_EXISTS
+    connection:
+      connect-timeout: 10s
+
+services:
+  user-service:
+    name: user-service
