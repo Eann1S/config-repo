@@ -43,6 +43,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://${DISCOVERY_SERVER_URL:localhost:8761}/eureka
+  instance:
+    prefer-ip-address: true
 
 secret:
   key: '{cipher}AQDQQFrNDwRqZM7Pn0FtTUmFd6bw172DLCeOoOeeXMWb2AH7Ikm/geAPeB/VOWsNWR94QCN+DPQLzPYUbuNEtltGbkNTAFU2IZiBrWteZFRz4Lr7jt84yuEPjBMNg2YORJBcWCanKhGlZ2/ubM5n3wLLV6uhW96FZQtYMJWb0cAeFpJTbaz8PGbsOVSSsC5GwM/RflsldaUdHNJE3nOoaipOSVbCylb63l5ZnWo3IBpz9PKj7WDaZ7+G3iigqvrKELZqpreaCNHjThAiJMG77CqgHY/P7nq/0vmlWBvGaE4M2/klt3q+pbuLlSHbuoHOcoYlyaolKdHnFNlwyQjZJL/rtub+cYjg1huXTwEn5YFA9G+LKQoEP2AiIDVoz0hLbXUYJO9msdfXMTIJAVFl+NB0L6cLNRSVHI2UB63zl4oUF8vXWIRbFP9MNyCBGsGXcYGJsshUXE4yUpoREgXZA40NHVVMLp7ymE3m3DEaawTwtA=='

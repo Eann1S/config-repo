@@ -15,7 +15,7 @@ spring:
         - id: authentication-service-secured
           uri: lb://authentication-service
           predicates:
-            - Path=/api/v1/confirmation/**,/api/v1/logout
+            - Path=/api/v1/confirm/**,/api/v1/confirmation-code/**,/api/v1/logout
           filters:
             - Authentication
             
@@ -23,6 +23,13 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**,/api/v1/user/**
+          filters:
+            - Authentication
+
+        - id: message-service
+          uri: lb://message-service
+          predicates:
+            - Path=/api/v1/chat/**
           filters:
             - Authentication
 eureka:
