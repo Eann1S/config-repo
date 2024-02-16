@@ -32,8 +32,18 @@ spring:
             - Path=/api/v1/chat/**
           filters:
             - Authentication
+
+        - id: websocket-server
+          uri: lb://websocket-server
+          predicates:
+            - Path=/ws/**,/chat/**,/user/**
+          filters:
+            - Authentication
 eureka:
   client:
+    registry-fetch-interval-seconds: 10
+    healthcheck:
+      enabled: true
     service-url:
       defaultZone: http://${DISCOVERY_SERVER_URL:localhost:8761}/eureka
 

@@ -1,4 +1,9 @@
+server:
+  port: ${SERVER_PORT:8089}
+
 spring:
+  application:
+    name: authentication-service
   datasource:
     url: jdbc:postgresql://${DATABASE_URL:localhost:5432}/authentication-service
     username: '{cipher}AQCGJWody2c2uHe+RcPKt6/E3O0OuG8ijzN/LRl/5rzoARWYb9BGhBXMLtmojpm4GuKaqTVZwbsrldGR/MonrH8wjLjZfu2EVd/5lxXJ+yvFsyDeclosFgbIXXHLfOvQhTOD3Y5Iuh17FpCHeFzTJSWUFzUFS3h2O4f5ZXuRv6WtlF8ksW5v5MFqZAm5Blmy8QjL3cjWPhP4mRiLOTcva2qzPEj6wbneApAvpg2H7siB8iYJ7ZPegtd+yGFdzJ2B6WmWR+oiHwvnIXwxODcAhGWVos28SebTiXIMdAkfcEI5cygYxmDQYDsrJ/IWD/bVvIBpA0ZqZExLQ2RiS9YkQzhAz6FNF87E1uyzxXX7jJsg7WMt7TA8cEZ5/eC1XQNeCVE='
@@ -41,6 +46,9 @@ spring:
 
 eureka:
   client:
+    registry-fetch-interval-seconds: 10
+    healthcheck:
+      enabled: true
     service-url:
       defaultZone: http://${DISCOVERY_SERVER_URL:localhost:8761}/eureka
   instance:
@@ -51,5 +59,5 @@ secret:
 
 kafka:
   topics:
-    registration-topic: registration-topic
+    user-register-topic: user-regiser-topic
     user-update-topic: user-update-topic
